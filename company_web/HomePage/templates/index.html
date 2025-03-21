@@ -1,0 +1,466 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django Project</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+<body>
+    
+    <!-- Main Content -->
+    <div id="main" class="relative w-full h-screen ">
+      <!-- Navbar -->
+    <nav class="fixed z-50 top-0 w-full bg-red-400 shadow-lg">
+      <div class="w-full px-4 sm:px-6 lg:px-10 flex justify-between items-center">
+          <!-- Left Section: Logo and Company Name -->
+          <div class="flex items-center ">
+            <a href="#main"><img src="{% static 'images/Icon-png.png' %}" alt="Logo" class="w-17"></a>
+            <a href="#main"><span class="text-2xl font-bold text-white font-serif">AFSON Tech</span></a>
+          </div>
+          <!-- Middle Section: Navigation Links (Hidden on Mobile) -->
+          <div data-aos="fade-up" class="hidden md:flex items-center space-x-8 ">
+            <a href="#services" class="text-white hover:text-black hover:font-bold font-serif">Services</a>
+            <a href="#stories" class="text-white hover:text-black hover:font-bold font-serif">Our Stories</a>
+            <a href="#projects" class="text-white hover:text-black hover:font-bold font-serif">Projects</a>
+          </div>
+  
+          <div class="hidden md:flex items-center group">
+            <!-- Start Innovating Button -->
+            <a href="#contact"
+              class="bg-white font-bold text-black px-4 py-3 rounded-3xl  relative flex items-center justify-center transition-all duration-300">
+              
+              <!-- Start Innovating Text (Initially visible) -->
+              <span class="text-base transition-opacity duration-300 group-hover:opacity-0">Start Innovating</span>
+              
+              <!-- Contact Icon SVG (Hidden initially, visible on hover) -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="h-6 w-6 text-black  absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </div>
+          
+    
+          <!-- Hamburger Menu for Mobile -->
+          <div class="flex md:hidden">
+            <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-blue-500 focus:outline-none">
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+      <!-- Mobile Menu (Hidden by Default) -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#services" class="block text-white font-serif hover:text-black-500">Services</a>
+          <a href="#stories" class="block text-white font-serif hover:text-blue-500">Our Stories</a>
+          <a href="#projects" class="block text-white font-serif hover:text-blue-500">Projects</a>
+          <a href="#contact" class="block text-white font-serif hover:text-blue-500">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+
+      <!-- Main Content -->
+      <div class="absolute z-40 flex text-2xl mx-[15%] mt-[27%] lg:mt-[18%] md:mt-[25%] sm:mt-[30%]">
+        <div class="flex flex-col ">
+          <h1 data-aos="fade-right"  class="text-3xl font-semibold text-black font-serif ">"Tech Solutions <br>for a Smarter Tomorrow"</h1><br>
+          <p data-aos="fade-right"  class="text-lg text-gray-800">From Vision to Execution – Customized Solutions for <strong>Startups</strong>, <strong>Growth</strong>, and <strong>Enterprises</strong></p>
+          <p data-aos="fade-right"  class="text-lg text-gray-800">We did it for Ourself why not for you?</p><br>
+          <div data-aos="fade-up" class="" >
+            <a class="bg-black hover:bg-red-500 p-3 text-white rounded-2xl  font-serif" href=""><span>Get in Touch</span></a>
+          </div>
+        </div>
+       </div>
+
+       <!-- Background image-->
+       <div class="h-screen group bg-white">
+        <!-- Default Image -->
+        <img src="{% static 'images/front2-image.png' %}" alt="default image" class="w-full h-full object-cover group-hover:hidden opacity-18">      
+        <!-- Image on Hover -->
+        <img src="{% static "images/front3-image.png" %}" alt="image on hover" class="w-full h-full object-cover absolute inset-0 hidden group-hover:block opacity-18">
+      </div>
+      
+
+      </div>
+
+    <!-- Introducing Section -->
+     <div id="services" class="w-full font-bold text-center py-7 lg:pt-30">
+      <h6 data-aos="zoom-in-up" class=" tracking-wide text-4xl">How We Help You Win</h6>
+     </div>
+     <div data-aos="zoom-in-up" class="w-full text-center py-3">
+      <p>We’re A Global Marketing And Business Development Powerhouse, Fueling Businesses With Cutting-Edge Strategies.</p>
+     </div>
+
+    <!--Grid Section-->
+    <div class="grid my-[4%] grid-cols-2 md:grid-cols-6 items-center justify-center lg:grid-cols-10 gap-8 px-5 md:px-10 lg:px-20 xl:px-40">
+      <div data-aos="fade-right" class="col-span-2 flex flex-col gap-3">
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Website Development</a>
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">SEO Services</a>
+      </div>
+      <div data-aos="fade-up" class="col-span-2 flex flex-col gap-3 lg:mt-16">
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Graphic Designing</a>
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Google Ads</a>
+      </div>
+      <div data-aos="fade-up" class="col-span-2 flex flex-col gap-3">
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Mobile Development</a>
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Digital Marketing</a>
+      </div>
+      <div data-aos="fade-up" class="col-span-2 flex flex-col gap-3 lg:mt-16">
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Gen AI</a>
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">AI/ML Software</a>
+      </div>
+      <div data-aos="fade-left" class="col-span-2 flex flex-col gap-3">
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Software Development</a>
+        <a class="text-center font-semibold border-2 border-red-400 rounded-xl p-3 hover:bg-red-400 hover:text-white shadow-xl shadow-gray-300" href="#contact">Meta Ads</a>
+      </div>
+    </div>
+
+    <!-- Web Design Services -->
+
+    <div class="grid md:grid-cols-3 grid-cols-1  md:my-[5%]">
+      <div class="col-span-1 bg-red-100 rounded-tr-4xl rounded-br-4xl">
+        <div class="text-3xl font-bold px-[15%] pt-[30%] pb-[5%]">Full Range of Web <br> Design Services</div>
+        <div class="pl-[15%] font-semibold">We offer professional web design services at affordable rates to help your business attract more visitors and keep them on your site!</div>
+        <div class="bg-red-400 text-white font-semibold ml-[15%] w-fit my-[5%] px-7 py-3 rounded-3xl">View All Services</div>
+      </div>
+      <div class="col-span-2 ">
+        <div class="grid md:grid-cols-2 grid-cols-1">
+          <div class="flex flex-col p-[16%] space-y-4">
+            <div ><i class="fa-solid fa-laptop-code fa-bounce fa-2xl"></i></div>
+            <a class="font-bold" href="">Website Development</a>
+            <div class="">We start from structuring information architecture and functionalities.</div>
+            <div><a href="">Read More <i  class="fa-solid fa-arrow-right fa-2xl"></i></a></div>
+          </div>
+          <div class="flex flex-col p-[16%] space-y-4">
+            <div><i class="fa-brands fa-shopify fa-2xl"></i></div>
+            <a class="font-bold" href="">Shopify</a>
+            <div>We offer professional Shopify services at affordable rates.</div>
+            <div><a href="">Read More <i class="fa-solid fa-arrow-right fa-2xl"></i></a></div>
+          </div>
+        </div>   
+        <div class="grid md:grid-cols-2 grid-cols-1">
+          <div class="flex flex-col p-[16%] space-y-4">
+            <div><i class="fa-solid fa-warehouse fa-2xl"></i></div>
+            <a class="font-bold" href="">E-Commerce</a>
+            <div>We build digital experiences to meet sales goals for your business.</div>
+            <div><a href="">Read More <i class="fa-solid fa-arrow-right fa-2xl"></i></a></div>
+          </div>
+          <div class="flex flex-col p-[16%] space-y-4">
+            <div><i class="fa-brands fa-wordpress fa-2xl"></i></div>
+            <a class="font-bold" href="">WordPress</a>
+            <div>Only best solutions that will make your business unique.</div>
+            <div><a href="">Read More <i class="fa-solid fa-arrow-right fa-2xl"></i></a></div>
+          </div>
+        </div>       
+      </div>
+    </div>
+    
+    <!-- Our Stories Section -->
+
+    <div data-aos="zoom-in" id="stories" class="w-full h-screen lg:px-20 md:px-10 px-5 flex items-center ">
+      <div class="shadow-gray-400 shadow-xl flex items-center justify-center flex-col lg:space-y-10 md:space-y-4 space-y-8 bg-red-100 w-full lg:h-[70%] md:h-[60%] h-[90%] rounded-4xl">
+        <div class="bg-red-400 text-white text-xl font-bold font-serif px-10 py-2 rounded-4xl ">Our Stories</div>
+        <div class="text-red-300 lg:text-7xl md:text-6xl text-2xl font-bold">Bringing Vision To Life</div>
+        <div class="font-semibold lg:text-xl text-rose-800  text-center">We are committed to offer tailor-made solutions  well-aligned with your goals.</div>
+      </div>
+    </div>
+
+    <!-- Build Section-->
+
+        <div class="w-full font-bold text-center py-7">
+          <h6 class="tracking-wide text-4xl">See How We Build Brands</h6>
+         </div>
+         <div class="w-full text-center pb-4">
+          <p>End To End Solution</p>
+         </div>
+        <!-- Build Grid Section-->
+
+        <div class="grid mx-[10%] lg:grid-cols-2 gap-5 md:gap-10 lg:gap-20 md:mt-[5%]">
+          <div data-aos="fade-right" class="bg-gray-100 shadow-2xl shadow-gray-400 flex flex-col gap-3 items-center h-fit rounded-tl-4xl rounded-tr-4xl rounded-bl-4xl">
+            <h1 class="font-bold text-xl tracking-wide my-[4%]">Analysis And Research</h1>
+              <div class=" mb-[10%] gap-3 flex flex-col  text-white">
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Competitive Audit
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Data Analysis
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Big Data
+                </div>
+              </div>
+          </div>
+         <div data-aos="fade-left" class="lg:relative w-full">
+          <div class="lg:absolute top-20 w-full bg-gray-100 shadow-2xl shadow-gray-400 flex flex-col gap-3 items-center h-fit rounded-tr-4xl rounded-bl-4xl rounded-br-4xl">
+            <h1 class="font-bold text-xl tracking-wide my-[4%] ">Strategy & Planning</h1>
+              <div class=" mb-[7%] gap-3 flex flex-col text-white">
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Brand Strategy
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Product Strategy
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Growth & Innovation Strategy
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Trendspotting Consulting
+                </div>
+              </div>
+          </div>
+         </div>
+          <div data-aos="fade-right" class="bg-gray-100 shadow-2xl shadow-gray-400 flex flex-col gap-3 items-center h-fit rounded-tl-4xl rounded-tr-4xl rounded-bl-4xl">
+            <h1 class="font-bold text-xl tracking-wide my-[4%] ">Design & Development</h1>
+              <div class=" mb-[7%] gap-3 flex flex-col text-white">
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Website Design 
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Web Development
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Content Management Systems
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  E-Commerce Development
+                </div>
+              </div>
+          </div>
+          <div data-aos="fade-left" class="lg:relative w-full">
+            <div class="lg:absolute top-40 w-full bg-gray-100 shadow-2xl shadow-gray-400 flex flex-col gap-3 items-center h-fit rounded-tr-4xl rounded-bl-4xl rounded-br-4xl">
+              <h1 class="font-bold text-xl tracking-wide my-[4%] ">Marketing</h1>
+                <div class=" mb-[7%] gap-3 flex flex-col text-white">
+                  <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                    <i class="fa-solid fa-share"></i>
+                    Search Engine Optimization
+                  </div>
+                  <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                    <i class="fa-solid fa-share"></i>
+                    Social Media Marketing
+                  </div>
+                  <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                    <i class="fa-solid fa-share"></i>
+                    Search Engine Marketing
+                  </div>
+                  <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                    <i class="fa-solid fa-share"></i>
+                    Online Reputation Management
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div data-aos="fade-right" class="bg-gray-100 shadow-2xl shadow-gray-400 flex flex-col gap-3 items-center h-fit rounded-tl-4xl rounded-tr-4xl rounded-bl-4xl">
+            <h1 class="font-bold text-xl tracking-wide my-[4%] ">Product Management</h1>
+              <div class=" mb-[7%] gap-3 flex flex-col text-white">
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Data Analytics
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Big Data
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  ERP Solutions
+                </div>
+                <div class="bg-red-400 p-2 w-50 rounded-tl-xl rounded-br-xl">
+                  <i class="fa-solid fa-share"></i>
+                  Robotic Process Automation
+                </div>
+              </div>
+          </div>
+        </div>
+
+    <!-- Project Section -->
+    <div id="projects" class="w-full font-bold text-center py-19 ">
+      <h6 class="tracking-wide text-6xl">Our Projects</h6>
+     </div>
+
+    <div class=" grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 p-10 lg:gap-15 md:gap-10 ">
+      <div data-aos="flip-up" class="col-span-1 bg-gray-100 rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none  shadow-md shadow-black">
+        <div class="lg:p-8 md:p-7 p-3">
+         <div class="overflow-hidden rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none transition-all duration-400">
+          <a href="https://dine-market-psi.vercel.app">
+            <img class="rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none hover:scale-110 transition-all duration-400" src="{% static "images/dine-market.webp" %}" alt="">
+          </a>
+         </div>
+        </div>
+        <div class="lg:px-12 px-6 pb-12 flex flex-col space-y-4">
+          <div class="font-semibold text-lg ">Dine Martek</div>
+          <div class="font-bold lg:text-3xl text-2xl">"Your One-Stop Shop for Everything!"</div>
+          <div class="text-lg">Dine Market is an e-commerce website built using Next js, typescript, tawilwind css and sanity.io. </div>
+        </div>
+      </div>
+        <div data-aos="flip-up" class=" relative">
+          <div class="col-span-1 absolute lg:top-40 md:top-30 top-20 bg-gray-100 rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none  shadow-md shadow-black">
+            <div class="lg:p-8 md:p-7 p-3">
+             <div class="overflow-hidden rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none transition-all duration-400">
+              <a href="https://dashboard-test-project-theta.vercel.app"><img class="rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none hover:scale-110 transition-all duration-400" src="{% static "images/dashboard.webp" %}" alt=""></a>
+             </div>
+            </div>
+            <div class="lg:px-12 px-6 pb-12 flex flex-col space-y-4">
+              <div class="font-semibold text-lg ">Dashboard</div>
+              <div class="font-bold lg:text-3xl text-2xl">"See the Big Picture with Real-Time Insights."</div>
+              <div class="text-lg">A Dashboard design built with Next js and React Chart library. </div>
+            </div>
+          </div>
+        </div>
+        <div data-aos="flip-right" class="col-span-1 lg:mt-30 md:mt-30 mt-175 bg-gray-100 rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none  shadow-md shadow-black">
+          <div class="lg:p-8 md:p-7 p-3">
+           <div class="overflow-hidden rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none transition-all duration-400">
+            <a href=""><img class="rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none hover:scale-110 transition-all duration-400" src="{% static "images/scribblers-corner.webp" %}" alt=""></a>
+           </div>
+          </div>
+          <div class="lg:px-12 px-6 pb-12 flex flex-col space-y-4">
+            <div class="font-semibold text-lg ">Scribbler's Corner</div>
+            <div class="font-bold lg:text-3xl text-2xl">"Connecting Nature, One Bite at a Time."</div>
+            <div class="text-lg">A blogging website template with awesome features built using Next js, Typescript, Tailwind css and sanity.io. </div>
+          </div>
+        </div>
+          <div data-aos="flip-left" class="relative">
+            <div class="col-span-1 absolute lg:top-70 md:top-50 top-20 bg-gray-100 rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none  shadow-md shadow-black">
+              <div class="lg:p-8 md:p-7 p-3">
+               <div class="overflow-hidden rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none transition-all duration-400">
+                <img class="rounded-tl-4xl rounded-br-4xl hover:rounded-tr-4xl hover: rounded-bl-4xl hover:rounded-tl-none hover:scale-110 transition-all duration-400" src="{% static "images/portfolio.webp" %}" alt="">
+               </div>
+              </div>
+              <div class="lg:px-12 px-6 pb-12 flex flex-col space-y-4">
+                <div class="font-semibold text-lg ">Portfolio Website</div>
+                <div class="font-bold lg:text-3xl text-2xl">"Elevating Ideas, One Project at a Time"</div>
+                <div class="text-lg">Portfolio website built using React js.</div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- Contact Us Section-->
+
+   <div id="contact"> <div  class="text-center lg:mt-50 md:mt-30 mt-130 font-bold md:text-6xl text-4xl">Let’s Discuss Your Project</div>
+   <div class="text-center mt-10 text-lg font-semibold text-black">We are committed to understanding your requirements and crafting a tailored solution that aligns with your goals. <br>Enter your details and someone from our team will reach out to find a time to connect with you.</div>
+   <form action="https://formspree.io/f/mdkeorjd" method="POST">
+    <div class="max-w-2xl mx-auto pt-10">
+      <div class="flex items-center space-x-4">
+        <label for="fname" class="text-lg w-40 font-medium text-black">First Name<span class="text-red-500">*</span></label>
+        <input type="text" id="fname" name="First-name" class="mt-1 block w-120 px-3 py-4 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black" placeholder="">
+      </div>
+    </div>
+    
+    <div class="max-w-2xl mx-auto py-8">
+      <div class="flex items-center space-x-4">
+        <label for="lname" class="text-lg w-40 font-medium text-black">Last Name<span class="text-red-500">*</span></label>
+        <input type="text" id="lname" name="Last-name" class="mt-1 block w-120 px-3 py-4 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black" placeholder="">
+      </div>
+    </div>
+    
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center space-x-4">
+        <label for="email" class="text-lg font-medium text-black w-40">Email<span class="text-red-500">*</span></label>
+        <input type="email" id="email" name="Email" class="mt-1 block w-120 px-3 py-4 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black" placeholder="">
+      </div>
+    </div>
+    
+    <div class="max-w-2xl mx-auto py-8">
+      <div class="flex items-center space-x-4">
+        <label for="phone" class="text-lg font-medium text-black w-40">Phone Number<span class="text-red-500">*</span></label>
+        <input type="tel" id="phone" name="Phone" class="mt-1 block w-120 px-3 py-4 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black" placeholder="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="">
+      </div>
+    </div>
+    
+    <div class="max-w-2xl mx-auto py-8">
+      <div class="flex items-center space-x-4">
+        <label for="project-details" class="text-lg font-medium text-black w-40">Project Details<span class="text-red-500">*</span></label>
+        <textarea id="project-details" name="Project-details" rows="4" class="mt-1 block w-120 px-3 py-4 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black" placeholder=""></textarea>
+      </div>
+    </div>
+    
+    <!-- Submit button -->
+    <div class="flex justify-center py-8">
+      <!-- Use button to submit the form -->
+      <button type="submit" class="bg-gray-800 text-white px-10 py-4 text-3xl font-bold rounded-4xl hover:bg-black">Submit</button>
+    </div>
+  </form>
+  
+  
+    <!-- <div class="grid lg:grid-cols-4 md:grid-cols-1 bg-gray-600">
+      <div class="lg:col-span-1 md:col-span-1 flex justify-center lg:border-r-4 border-white lg:rounded-4xl">
+        <div class="flex items-center ">
+          <img src="images/Icon-png.png" alt="Logo" class="w-17">
+          <span class="text-2xl font-bold text-white font-serif">AFSON Tech</span>
+        </div>
+      </div>
+      <div class="col-span-1 text-white text-sm font-serif space-y-1 p-5 border-b-4 lg:border-r-4 flex flex-col justify-center items-center lg:rounded-4xl ">
+        <div><a href="">Website Development</a></div>
+        <div><a href="">SEO Services</a></div>
+        <div><a href="">Graphic Designing</a></div>
+        <div><a href="">Google Ads</a></div>
+        <div><a href="">Mobile Development</a></div>
+        <div><a href="">Digital Marketing</a></div>
+        <div><a href="">Content Writing</a></div>
+        <div><a href="">Business Strategy</a></div>
+        <div><a href="">Software Development</a></div>
+        <div><a href="">Meta Ads</a></div>
+      </div>
+      <div class="col-span-1 text-white justify-center space-y-2 flex flex-col items-center justify-center lg:border-r-4 border-white font-bold text-sm font-serif lg:rounded-4xl">
+        <div><a href="">Services</a></div>
+        <div><a href="">About Us</a></div>
+      </div>
+      <div class="col-span-1 text-white space-y-2 flex flex-col justify-center items-center ">
+        <div class="font-bold text-sm font-serif">Follow Us</div>
+        <div class="flex flex-row space-x-3 ">
+          <div class="w-7 h-7"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#582ed6" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a></div>
+          <div class="w-7 h-7 mb-3 lg:mb-0"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#582ed6" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a></div>
+        </div>
+      </div>
+      
+    </div> -->
+
+    <footer class="bg-gray-800 text-white py-4 border-t-4">
+      <div class="text-center">
+        <p>&copy; 2025 <span class="font-bold text-yellow-400">AfsonTech</span>. All Rights Reserved.</p>
+      </div>
+    </footer>
+    
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // Animation duration in milliseconds
+        once: false,     // Make the animation trigger only once
+      });
+    </script>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+     
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+  
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+
+  </html>
+
+ 

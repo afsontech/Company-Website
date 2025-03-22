@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: company-website
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn company_web.wsgi:application"
+    plan: free  # or another plan, depending on your Render subscription
